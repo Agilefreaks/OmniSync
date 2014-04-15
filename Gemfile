@@ -9,6 +9,12 @@ group :development do
   gem 'guard-rspec'
   gem 'pry-nav'
   gem 'fuubar'
-  gem "bundler"
-  gem "timers"
+  gem 'bundler'
+  gem 'timers'
+
+    # deploy
+  gem 'capistrano', '~> 3.1.0', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano3-puma', require: false
 end

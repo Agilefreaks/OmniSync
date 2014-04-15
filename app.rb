@@ -1,6 +1,5 @@
 require 'wamp'
 require 'json'
-require 'pry'
 
 class Application1 < WAMP::Server
   include SimpleRouter::DSL
