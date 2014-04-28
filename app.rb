@@ -15,7 +15,7 @@ class Application1 < WAMP::Server
   post '/' do |context, request|
     puts 'posted request ' + request.inspect
 
-    sender_id = request['registration_id']
+    sender_id = request['registration_ids'].first
     client = context.engine.clients[sender_id]
     payload = request['data']
 
