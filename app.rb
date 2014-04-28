@@ -12,23 +12,25 @@ class Application1 < WAMP::Server
     data.to_json
   end
 
-  post '/' do |context, data|
-    puts 'posted data ' + data.inspect
-    sender_id = data['registration_id']
-    event_data = data['event']
+  post '/' do |context, request|
+    puts 'posted request ' + request.inspect
+
+    sender_id = request['registration_id']
     client = context.engine.clients[sender_id]
+    payload = request['data']
+
+    event_data = request['event'] || {'topic_uri' => ''}
     topic_uri = event_data['topic_uri']
-    payload = event_data['data']
-    
+
     puts 'topic_uri = ' + topic_uri.inspect
     puts 'payload = ' + payload.inspect
 
-    if (client)
+    if client
       context.engine.create_event(client, topic_uri, payload, false, nil)
       context.trigger(:publish, client, topic_uri, payload, false, nil)
     end
 
-    data.to_json
+    request.to_json
   end
 end
 
