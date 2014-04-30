@@ -10,15 +10,15 @@ describe API::Root do
   # rubocop:disable Blocks
   let(:options) {
     {
-        'CONTENT_TYPE' => 'application/json',
-        'ACCEPT' => 'application/json'
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
     }
   }
 
   describe 'POST /notify' do
     subject { post '/api/v1/notify', params.to_json, options }
 
-    let(:params) { {registration_ids: %w(42 43), data: {provider: 'clipboard'}.to_json} }
+    let(:params) { { registration_ids: %w(42 43), data: { provider: 'clipboard' }.to_json } }
 
     context 'when there is a client' do
       let(:client) { double(:client) }
@@ -28,8 +28,9 @@ describe API::Root do
       end
 
       it 'calls create_event' do
-        expect_any_instance_of(WAMP::Engines::Memory).to receive(:create_event).
-                                                             with(client, '', params[:data], false, nil).twice
+        expect_any_instance_of(WAMP::Engines::Memory).to receive(:create_event)
+                                                         .with(client, '', params[:data], false, nil)
+                                                         .twice
         expect(OmniSync::App.instance).to receive(:trigger).with(:publish, client, '', params[:data], false, nil).twice
 
         subject

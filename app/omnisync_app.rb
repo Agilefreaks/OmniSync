@@ -23,7 +23,7 @@ module OmniSync
 
         omni_sync_app.bind(:prefix) do |client, prefix, uri|
           log "#{client.id} negotiated #{prefix} as #{uri}"
-          log "#{client.id} prefixes: #{client.prefixes.to_s}"
+          log "#{client.id} prefixes: #{client.prefixes}"
         end
 
         omni_sync_app.bind(:subscribe) do |client, topic|
@@ -50,9 +50,9 @@ module OmniSync
       if Faye::WebSocket.websocket?(env)
         ws = Faye::WebSocket.new(env, ['wamp'], ping: 25)
 
-        ws.onopen    = lambda { |event| handle_open(ws, event) }
-        ws.onmessage = lambda { |event| handle_message(ws, event) }
-        ws.onclose   = lambda { |event| handle_close(ws, event) }
+        ws.onopen = ->(event) { handle_open(ws, event) }
+        ws.onmessage = ->(event) { handle_message(ws, event) }
+        ws.onclose = ->(event) { handle_close(ws, event) }
 
         ws.rack_response
       else
