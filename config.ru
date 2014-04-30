@@ -1,4 +1,6 @@
-$: << File.expand_path(File.dirname(__FILE__))
-require './app'
+require File.expand_path('../config/environment', __FILE__)
 
-run App.start
+# Manually start the newrelic agent
+NewRelic::Agent.manual_start
+
+run OmniSync::App.instance
