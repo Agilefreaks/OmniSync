@@ -5,6 +5,9 @@ module API
   # entities
   require_relative 'entities/notification'
 
+  # resources
+  require_relative 'resources/version'
+
   class Root < Grape::API
     version 'v1', using: :path, vendor: 'OmniSync', cascade: false
     prefix 'api'
@@ -37,6 +40,8 @@ module API
 
       present status, with: API::Entities::Notification
     end
+
+    mount API::Resources::Version
 
     add_swagger_documentation(
         api_version: 'v1',
