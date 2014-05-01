@@ -16,8 +16,6 @@ gem 'newrelic_rpm'
 gem 'newrelic-grape'
 
 group :development do
-  gem 'bundler'
-
   gem 'pry'
   gem 'pry-nav'
 
