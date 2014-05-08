@@ -29,9 +29,11 @@ describe API::Root do
 
       it 'calls create_event' do
         expect_any_instance_of(WAMP::Engines::Memory).to receive(:create_event)
-                                                         .with(client, '', params[:data], false, nil)
-                                                         .twice
-        expect(OmniSync::App.instance).to receive(:trigger).with(:publish, client, '', params[:data], false, nil).twice
+                                                         .with(client, '42', params[:data], false, nil)
+        expect_any_instance_of(WAMP::Engines::Memory).to receive(:create_event)
+                                                         .with(client, '43', params[:data], false, nil)
+        expect(OmniSync::App.instance).to receive(:trigger).with(:publish, client, '42', params[:data], false, nil)
+        expect(OmniSync::App.instance).to receive(:trigger).with(:publish, client, '43', params[:data], false, nil)
 
         subject
 

@@ -38,4 +38,3 @@ if ENV['RACK_ENV'] == 'development'
 
   task default: [:rubocop, :spec]
 end
-

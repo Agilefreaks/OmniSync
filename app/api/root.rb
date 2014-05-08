@@ -19,17 +19,14 @@ module API
     params do
       requires :registration_ids, type: Array, desc: "The registration id's to notify."
       optional :data, desc: 'Payload.'
-      optional :event do
-        optional :topic_uri, default: ''
-      end
     end
     post '/notify' do
       payload = declared_params[:data]
-      topic_uri = declared_params[:event][:topic_uri]
       status = OpenStruct.new(number_of_send_notifications: 0)
 
       declared_params[:registration_ids].each do |registration_id|
         client = OmniSync::App.instance.engine.clients[registration_id]
+        topic_uri = registration_id
 
         if client
           OmniSync::App.instance.engine.create_event(client, topic_uri, payload, false, nil)
