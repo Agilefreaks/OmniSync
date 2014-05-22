@@ -28,11 +28,11 @@ module API
         client = OmniSync::App.instance.engine.clients[registration_id]
         topic_uri = registration_id
 
-        if client
-          OmniSync::App.instance.engine.create_event(client, topic_uri, payload, false, nil)
-          OmniSync::App.instance.trigger(:publish, client, topic_uri, payload, false, nil)
-          status.number_of_send_notifications += 1
-        end
+        next unless client
+
+        OmniSync::App.instance.engine.create_event(client, topic_uri, payload, false, nil)
+        OmniSync::App.instance.trigger(:publish, client, topic_uri, payload, false, nil)
+        status.number_of_send_notifications += 1
       end
 
       present status, with: API::Entities::Notification
