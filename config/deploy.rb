@@ -1,10 +1,10 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
+# config valid only for Capistrano 3.2
+lock '3.2.1'
 
 set :application, 'OmniSync'
 set :repo_url, 'git@github.com:Agilefreaks/OmniSync.git'
 
-set :rvm_ruby_version, 'ruby-2.1.1@omnisync'
+set :rvm_ruby_version, 'ruby-2.1.2@omnisync'
 
 set :puma_workers, 4
 set :puma_preload_app, true
