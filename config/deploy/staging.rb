@@ -1,7 +1,5 @@
-role :app, %w(deploy@46.16.191.70)
-role :web, %w(deploy@46.16.191.70)
-
-set :deploy_to, '/var/www/omnisync_staging'
+set :deploy_to, '/var/www/omnisync'
 set :branch, 'staging'
 
-set :puma_workers, 4
+role :app, %w(deploy@5.10.81.85)
+role :web, %w(deploy@5.10.81.85)
