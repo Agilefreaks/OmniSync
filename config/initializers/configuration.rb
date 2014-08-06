@@ -3,5 +3,5 @@ class Configuration
     attr_accessor :app_version
   end
 
-  @app_version = '1.0.12'
+  @app_version = '1.0.13'
 end
