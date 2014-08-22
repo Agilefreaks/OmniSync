@@ -170,7 +170,7 @@ DEPENDENCIES
   grape-swagger
   guard-rspec
   newrelic-grape
-  newrelic_rpm
+  newrelic_rpm (~> 3.8.1)
   pry
   pry-nav
   puma

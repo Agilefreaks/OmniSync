@@ -12,7 +12,7 @@ gem 'grape-swagger'
 gem 'bundler'
 gem 'rake'
 
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.8.1'
 gem 'newrelic-grape'
 
 group :development do
