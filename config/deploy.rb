@@ -4,7 +4,7 @@ lock '3.2.1'
 set :application, 'OmniSync'
 set :repo_url, 'git@github.com:Agilefreaks/OmniSync.git'
 
-set :rvm_ruby_version, 'ruby-2.1.2@omnisync'
+set :rvm_ruby_version, 'ruby-2.1.3@omnisync'
 
 namespace :deploy do
 
