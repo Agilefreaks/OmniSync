@@ -41,8 +41,8 @@ module API
     mount API::Resources::Version
 
     base_paths = {
-        'development' => 'http://localhost:9293',
-        'staging' => 'https://syncstaging.omnipasteapp.com'
+      'development' => 'http://localhost:9293',
+      'staging' => 'https://syncstaging.omnipasteapp.com'
     }
 
     add_swagger_documentation(
