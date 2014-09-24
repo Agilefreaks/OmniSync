@@ -40,11 +40,16 @@ module API
 
     mount API::Resources::Version
 
+    base_paths = {
+        'development' => 'http://localhost:9293',
+        'staging' => 'https://syncstaging.omnipasteapp.com'
+    }
+
     add_swagger_documentation(
         api_version: 'v1',
         mount_path: 'doc',
         hide_documentation_path: true,
-        markdown: true
+        base_path: base_paths[ENV['RACK_ENV']]
     )
   end
 end

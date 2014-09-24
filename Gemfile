@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.3'
 
 gem 'puma'
 gem 'faye-websocket'
@@ -12,7 +12,7 @@ gem 'grape-swagger'
 gem 'bundler'
 gem 'rake'
 
-gem 'newrelic_rpm', '~> 3.8.1'
+gem 'newrelic_rpm'
 gem 'newrelic-grape'
 
 group :development do
@@ -23,8 +23,8 @@ group :development do
 
   gem 'rubocop'
 
-    # deploy
-  gem 'capistrano', '~> 3.2.1', require: false
+  # deploy
+  gem 'capistrano', '~> 3.2', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm', require: false
   gem 'capistrano3-puma', require: false
