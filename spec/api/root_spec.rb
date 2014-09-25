@@ -19,7 +19,7 @@ describe API::Root do
   describe 'POST /notify' do
     subject { post '/api/v1/notify', params.to_json, options }
 
-    let(:params) { { registration_ids: %w(), data: { provider: 'clipboard' }.to_json } }
+    let(:params) { { data: { provider: 'clipboard' }.to_json } }
 
     context 'when there is a client' do
       let(:client) { double(:client) }

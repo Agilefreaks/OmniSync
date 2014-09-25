@@ -17,7 +17,6 @@ module API
 
     desc 'Send a notification.', ParamsHelper.auth_headers
     params do
-      optional :registration_ids, type: Array, desc: "The registration id's to notify."
       optional :data, desc: 'Payload.'
     end
     post '/notify' do

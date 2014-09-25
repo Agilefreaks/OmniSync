@@ -16,7 +16,7 @@ module ParamsHelper
           description: 'The authorization token.',
           required: true
         },
-        'ws-synctoken' => {
+        'Ws-Synctoken' => {
           description: 'The sync token.',
           required: true
         }
