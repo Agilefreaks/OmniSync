@@ -1,6 +1,7 @@
 require 'wamp'
 require 'json'
 require 'api/root'
+require 'api/wamp/engines/omni'
 
 module OmniSync
   class App < WAMP::Server
@@ -9,9 +10,9 @@ module OmniSync
     end
 
     # rubocop:disable MethodLength
-    def self.instance
+    def self.instance(hostname = '')
       @instance ||= Rack::Builder.new do
-        omni_sync_app = OmniSync::App.new
+        omni_sync_app = OmniSync::App.new(engine: {hostname: hostname, type: :omni})
 
         def log(text)
           puts "[#{Time.now}] #{text}"

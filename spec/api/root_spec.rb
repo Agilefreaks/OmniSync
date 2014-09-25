@@ -25,11 +25,11 @@ describe API::Root do
       let(:client) { double(:client) }
 
       before do
-        allow_any_instance_of(WAMP::Engines::Memory).to receive(:clients).and_return('0142' => client)
+        allow_any_instance_of(WAMP::Engines::Omni).to receive(:clients).and_return('0142' => client)
       end
 
       it 'calls create_event' do
-        expect_any_instance_of(WAMP::Engines::Memory).to receive(:create_event)
+        expect_any_instance_of(WAMP::Engines::Omni).to receive(:create_event)
                                                          .with(client, '0142', params[:data], false, nil)
         expect(OmniSync::App.instance).to receive(:trigger).with(:publish, client, '0142', params[:data], false, nil)
 
