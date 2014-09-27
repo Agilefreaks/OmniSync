@@ -11,7 +11,7 @@ stdout_redirect '/var/www/omnisync/shared/log/puma_access.log', '/var/www/omnisy
 threads 0, 4
 
 bind 'unix:/var/www/omnisync/shared/tmp/sockets/puma.sock'
-workers 4
+workers 2
 
 preload_app!
 
