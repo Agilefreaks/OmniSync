@@ -12,8 +12,8 @@ gem 'grape-swagger'
 gem 'bundler'
 gem 'rake'
 
-# gem 'newrelic_rpm'
-# gem 'newrelic-grape'
+gem 'newrelic_rpm'
+gem 'newrelic-grape'
 
 group :development do
   gem 'pry'
