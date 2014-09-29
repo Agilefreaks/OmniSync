@@ -12,14 +12,8 @@ module ParamsHelper
   def auth_headers
     {
       headers: {
-        'Authorization' => {
-          description: 'The authorization token.',
-          required: true
-        },
-        'Ws-Synctoken' => {
-          description: 'The sync token.',
-          required: true
-        }
+        'Authorization' => { description: 'The authorization token.', required: true },
+        'Ws-Synctoken' => { description: 'The sync token.', required: true }
       }
     }
   end

@@ -12,7 +12,7 @@ module OmniSync
     # rubocop:disable MethodLength
     def self.instance(hostname = '')
       @instance ||= Rack::Builder.new do
-        omni_sync_app = OmniSync::App.new(engine: {hostname: hostname, type: :omni})
+        omni_sync_app = OmniSync::App.new(engine: { hostname: hostname, type: :omni })
 
         def log(text)
           puts "[#{Time.now}] #{text}"
