@@ -8,10 +8,10 @@ pidfile '/var/www/omnisync/shared/tmp/pids/puma.pid'
 state_path '/var/www/omnisync/shared/tmp/pids/puma.state'
 stdout_redirect '/var/www/omnisync/shared/log/puma_access.log', '/var/www/omnisync/shared/log/puma_error.log', true
 
-threads 0, 4
+threads 0, 1
 
 bind 'unix:/var/www/omnisync/shared/tmp/sockets/puma.sock'
-workers 2
+workers 1
 
 preload_app!
 
