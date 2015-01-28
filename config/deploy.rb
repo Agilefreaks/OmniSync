@@ -7,7 +7,6 @@ set :repo_url, 'git@github.com:Agilefreaks/OmniSync.git'
 set :rvm_ruby_version, 'ruby-2.2.0@omnisync'
 
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -26,5 +25,4 @@ namespace :deploy do
       # end
     end
   end
-
 end

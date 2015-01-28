@@ -30,7 +30,7 @@ describe API::Root do
 
       it 'calls create_event' do
         expect_any_instance_of(WAMP::Engines::Omni).to receive(:create_event)
-                                                         .with(client, '0142', params[:data], false, nil)
+          .with(client, '0142', params[:data], false, nil)
         expect(OmniSync::App.instance).to receive(:trigger).with(:publish, client, '0142', params[:data], false, nil)
 
         subject

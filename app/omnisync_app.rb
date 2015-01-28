@@ -9,7 +9,7 @@ module OmniSync
       super(options)
     end
 
-    # rubocop:disable MethodLength
+    # rubocop:disable MethodLength, AbcSize
     def self.instance(hostname = '')
       @instance ||= Rack::Builder.new do
         omni_sync_app = OmniSync::App.new(engine: { hostname: hostname, type: :omni })
