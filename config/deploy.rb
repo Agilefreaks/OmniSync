@@ -1,10 +1,10 @@
 # config valid only for Capistrano 3.2
-lock '3.2.1'
+lock '3.3.5'
 
 set :application, 'OmniSync'
 set :repo_url, 'git@github.com:Agilefreaks/OmniSync.git'
 
-set :rvm_ruby_version, 'ruby-2.1.5@omnisync'
+set :rvm_ruby_version, 'ruby-2.2.0@omnisync'
 
 namespace :deploy do
 
