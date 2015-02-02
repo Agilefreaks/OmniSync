@@ -27,7 +27,7 @@ GEM
       capistrano (~> 3.0)
       sshkit (~> 1.2)
     capistrano-stats (1.1.1)
-    capistrano3-puma (0.8.4)
+    capistrano3-puma (0.8.5)
       capistrano (~> 3.0)
       puma (>= 2.6)
     celluloid (0.16.0)
