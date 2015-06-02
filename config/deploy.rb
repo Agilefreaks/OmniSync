@@ -1,5 +1,5 @@
-# config valid only for Capistrano 3.2
-lock '3.3.5'
+# config valid only for Capistrano 3.4
+lock '3.4.0'
 
 set :application, 'OmniSync'
 set :repo_url, 'git@github.com:Agilefreaks/OmniSync.git'
