@@ -44,10 +44,10 @@ module API
     }
 
     add_swagger_documentation(
-        api_version: 'v1',
-        mount_path: 'doc',
-        hide_documentation_path: true,
-        base_path: base_paths[ENV['RACK_ENV']]
+      api_version: 'v1',
+      mount_path: 'doc',
+      hide_documentation_path: true,
+      base_path: base_paths[ENV['RACK_ENV']]
     )
   end
 end

@@ -8,13 +8,13 @@ describe API::Root do
   end
 
   # rubocop:disable Blocks
-  let(:options) {
+  let(:options) do
     {
       'CONTENT_TYPE' => 'application/json',
       'ACCEPT' => 'application/json',
       'HTTP_WS_SYNCTOKEN' => '0142'
     }
-  }
+  end
 
   describe 'POST /notify' do
     subject { post '/api/v1/notify', params.to_json, options }
@@ -37,8 +37,8 @@ describe API::Root do
 
         expect(last_response.status).to eq 201
         expect(last_response.body).to eq API::Entities::Notification.new(
-                                             OpenStruct.new(number_of_send_notifications: 1)
-                                         ).to_json
+          OpenStruct.new(number_of_send_notifications: 1)
+        ).to_json
       end
     end
   end
